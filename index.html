@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENAD - Registro Nacional de Animales Domésticos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- encabezado -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <h1>RENAD</h1>
+                <p class="subtitle">Registro Nacional de Animales Domésticos</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- navegacion -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#registro" class="nav-link">Registro</a></li>
+                <li><a href="#mascotas" class="nav-link">Mis Mascotas</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- contenido principal -->
+    <main>
+        <!--inicio -->
+        <section id="inicio" class="section-inicio">
+            <div class="container">
+                <h2>Bienvenido a RENAD</h2>
+                <p>El Registro Nacional de Animales Domésticos es un sistema diseñado para llevar un control organizado de tus mascotas, sus datos médicos y la información de su responsable legal.</p>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>📋 Registro Seguro</h3>
+                        <p>Mantén todos los datos de tus mascotas en un lugar seguro y organizado.</p>
+                    </div>
+                    <div class="feature-card"> 
+                        <h3>🐾 Gestión Fácil</h3>
+                        <p>Administra la información de tus animales de forma rápida e intuitiva.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💾 Almacenamiento Local</h3>
+                        <p>Tus datos se guardan localmente en tu navegador de forma segura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- registro -->
+        <section id="registro" class="section-registro">
+            <div class="container">
+                <h2>Formulario de Registro</h2>
+                
+                <form id="formRegistro" class="form-registro">
+                    <div class="form-content">
+                        <!-- columna izquierda Datos de la Mascota -->
+                        <div class="form-column">
+                            <fieldset>
+                                <legend>DATOS DE LA MASCOTA</legend>
+                                
+                                <div class="form-group">
+                                    <label for="nombreMascota">Nombre Mascota</label>
+                                    <input 
+                                        type="text" 
+                                        id="nombreMascota" 
+                                        name="nombreMascota" 
+                                        placeholder="Nombre de la mascota"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorNombreMascota"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edadMascota">Edad</label>
+                                    <input 
+                                        type="number" 
+                                        id="edadMascota" 
+                                        name="edadMascota" 
+                                        placeholder="Edad en años"
+                                        min="0"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorEdadMascota"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="especieMascota">Especie</label>
+                                    <select id="especieMascota" name="especieMascota" required>
+                                        <option value="">Seleccionar especie</option>
+                                        <option value="Perro">Perro</option>
+                                        <option value="Gato">Gato</option>
+                                        <option value="Conejo">Conejo</option>
+                                        <option value="Hamster">Hamster</option>
+                                        <option value="Pajaro">Pájaro</option>
+                                        <option value="Pez">Pez</option>
+                                        <option value="Otra">Otra</option>
+                                    </select>
+                                    <span class="error-message" id="errorEspecieMascota"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="colorMascota">Color/Descripción</label>
+                                    <input 
+                                        type="text" 
+                                        id="colorMascota" 
+                                        name="colorMascota" 
+                                        placeholder="Color o características"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorColorMascota"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="razaMascota">Raza</label>
+                                    <input 
+                                        type="text" 
+                                        id="razaMascota" 
+                                        name="razaMascota" 
+                                        placeholder="Raza de la mascota"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorRazaMascota"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="microchipMascota">Microchip (Opcional)</label>
+                                    <input 
+                                        type="text" 
+                                        id="microchipMascota" 
+                                        name="microchipMascota" 
+                                        placeholder="Número de microchip"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fechaMascota">Fecha de Nacimiento</label>
+                                    <input 
+                                        type="date" 
+                                        id="fechaMascota" 
+                                        name="fechaMascota"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorFechaMascota"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sexoMascota">Sexo</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="sexoMascota" value="Macho" required>
+                                            Macho
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="sexoMascota" value="Hembra" required>
+                                            Hembra
+                                        </label>
+                                    </div>
+                                    <span class="error-message" id="errorSexoMascota"></span>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- columna derecha Datos del Responsable -->
+                        <div class="form-column">
+                            <fieldset>
+                                <legend>DATOS DEL RESPONSABLE LEGAL</legend>
+                                
+                                <div class="form-group">
+                                    <label for="cedula">Cédula</label>
+                                    <input 
+                                        type="text" 
+                                        id="cedula" 
+                                        name="cedula" 
+                                        placeholder="Número de cédula"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorCedula"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nombreResponsable">Nombre del Responsable</label>
+                                    <input 
+                                        type="text" 
+                                        id="nombreResponsable" 
+                                        name="nombreResponsable" 
+                                        placeholder="Nombre completo"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorNombreResponsable"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="apellidoResponsable">Apellido</label>
+                                    <input 
+                                        type="text" 
+                                        id="apellidoResponsable" 
+                                        name="apellidoResponsable" 
+                                        placeholder="Apellido"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorApellidoResponsable"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefonoResponsable">Teléfono</label>
+                                    <input 
+                                        type="tel" 
+                                        id="telefonoResponsable" 
+                                        name="telefonoResponsable" 
+                                        placeholder="Número telefónico"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorTelefonoResponsable"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="emailResponsable">Email</label>
+                                    <input 
+                                        type="email" 
+                                        id="emailResponsable" 
+                                        name="emailResponsable" 
+                                        placeholder="Correo electrónico"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorEmailResponsable"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="direccion">Dirección</label>
+                                    <textarea 
+                                        id="direccion" 
+                                        name="direccion" 
+                                        placeholder="Dirección completa"
+                                        rows="3"
+                                        required
+                                    ></textarea>
+                                    <span class="error-message" id="errorDireccion"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ciudadResponsable">Ciudad</label>
+                                    <input 
+                                        type="text" 
+                                        id="ciudadResponsable" 
+                                        name="ciudadResponsable" 
+                                        placeholder="Ciudad"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorCiudadResponsable"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="codigoPostal">Código Postal</label>
+                                    <input 
+                                        type="text" 
+                                        id="codigoPostal" 
+                                        name="codigoPostal" 
+                                        placeholder="Código postal"
+                                        required
+                                    >
+                                    <span class="error-message" id="errorCodigoPostal"></span>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!-- botones de accion -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="btnRegistrar">
+                            Registrar Mascota
+                        </button>
+                        <button type="reset" class="btn btn-secondary" id="btnLimpiar">
+                            Limpiar Formulario
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- secccion de mascotas registradas -->
+        <section id="mascotas" class="section-mascotas">
+            <div class="container">
+                <h2>Mis Mascotas Registradas</h2>
+                
+                <div id="listaMascotas" class="mascotas-grid">
+                    <!-- lista de las mascotas registadas -->
+                </div>
+                
+                <div id="mensajeVacio" class="mensaje-vacio">
+                    <p>No hay mascotas registradas aún. ¡Registra tu primera mascota!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- seccion final -->
+        <section id="contacto" class="section-contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <div class="contacto-info">
+                    <div class="info-item">
+                        <h3>📞 Teléfono</h3>
+                        <p>+595 (0999)99 99 99</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📧 Email</h3>
+                        <p>info@renad.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📍 Ubicación</h3>
+                        <p>Calle Principal 123, Ciudad, País</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- registro exitoso -->
+    <div id="modalExito" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <div class="modal-header success-header">
+                <h2>¡Registro Exitoso!</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Los datos de la mascota han sido registrados correctamente.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btnNuevoRegistro">Nuevo Registro</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- pie de la pagina -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 RENAD - Registro Nacional de Animales Domésticos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
